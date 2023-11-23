@@ -1,4 +1,5 @@
 const express = require('express');
+const os = require("os")
 
 const app = express();
 
@@ -9,11 +10,11 @@ setInterval(() => {
 }, 1000)
 
 app.get('/', (req, res) => {
-  res.send('Hello World! v6.0.0');
+  res.send(`Hello World v9.0.0! hostName -> ${os.hostname()} time -> ${time}s`);
 })
 
 app.get('/health', (req, res) => {
-  time <= 15 ? res.status(200).send("ok") : res.status(500)
+  res.status(200).send("ok")
 })
 
 app.listen(3000, () => {
