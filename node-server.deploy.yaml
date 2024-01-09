@@ -18,7 +18,7 @@ spec:
         app: node-server-pod
     spec:
       containers:
-        - image: wuyupei/node-server:v10.0.1
+        - image: wuyupei/node-server:v11.0.0
           name: node-server-container
           livenessProbe: #存活探针
             httpGet:
