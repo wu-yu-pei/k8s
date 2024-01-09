@@ -10,7 +10,7 @@ setInterval(() => {
 }, 1000)
 
 app.get('/', (req, res) => {
-  res.send(`Hello World v11.0.0! hostName -> ${os.hostname()} time -> ${time}s`);
+  res.send(`Hello World v11.0.2! hostName -> ${os.hostname()} time -> ${time}s ${process.DB_URL || process.env.DB_URL}`);
 })
 
 app.get('/health', (req, res) => {

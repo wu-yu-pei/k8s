@@ -18,8 +18,14 @@ spec:
         app: node-server-pod
     spec:
       containers:
-        - image: wuyupei/node-server:v11.0.0
+        - image: wuyupei/node-server:v11.0.2
           name: node-server-container
+          env:
+          - name: DB_URL
+            valueFrom:
+              configMapKeyRef:
+                name: config
+                key: DB_URL
           livenessProbe: #存活探针
             httpGet:
               path: /health
